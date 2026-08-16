@@ -1,32 +1,46 @@
-# SOVEREIGN OS
-> The Cognitive Operating System Layer for Self-Evolving AI Agents
+# SOVEREIGN: Public Interfaces for Self-Evolving Agent Systems
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](#)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
-**SOVEREIGN** is a bio-inspired agentic operating system designed to elevate stateless LLMs into highly reliable, evolving digital twins. Unlike chat-wrappers or rigid tool-calling pipelines, SOVEREIGN treats models as execution units (CPU logic) within a broader memory, reflection, and state-management system (RAM/OS).
+This repository contains minimal public interfaces related to Cognitive Immunity and structured cross-session memory. It is not the complete SOVEREIGN product or a production agent operating system.
 
-## 🧬 Cognitive Immunity Framework
-The crown jewel of SOVEREIGN OS is its **Cognitive Immunity** sub-system. Inspired by the mammalian immune system, it prevents agents from making the same critical error twice.
+## Cognitive Immunity
 
-- **B-Cells (Pattern Gen):** Triggers on failure to extract generalized "Antigens" (error root causes) and generate persistent "Antibodies" (behavioral overrides).
-- **T-Cells (Runtime Routing):** Scans incoming queries. If an antigen signature matches, the T-Cell forcefully injects the Antibody into the context window, bypassing standard instruction decay.
-- **Decay Dynamics ($B^* = r/\lambda$):** Employs mathematical forgetting curves to ensure the context window isn't bloated with stale rules, guaranteeing $O(\log n)$ PAC-learnable safety bounds.
+Cognitive Immunity is a bounded runtime failure-memory approach: a verified failure can create a scoped, reviewable rule that influences later decisions. The objective is to reduce recurrence of previously observed failure classes while keeping the rule attributable, limited, decaying, and reversible.
 
-## 🗄️ DeerFlow Memory Schema
-SOVEREIGN ships with the `DeerFlow` interface, a structured schema that wraps standardized Vector DBs (like ChromaDB or Milvus). The goal is cross-session context continuity, allowing agents to distill episodic memory into semantic wisdom.
+A simple continuous decay model is:
 
-## 🚀 Building on SOVEREIGN
-We are opening the interfaces of Sovereign's Cognitive Immunity loop and the DeerFlow standard! Open-source researchers are encouraged to build specific business plugins or test standard models against the OS API. 
+```text
+dB/dt = r - lambda * B
+B* = r / lambda
+```
 
-*Note: The proprietary modules including the High-Net-Worth Profile Builder, Financial Strategy prompts, and advanced Orchestrator routing loops are reserved for Enterprise deployments.*
+Here `B` is retained rule strength, `r` is reinforcement rate, and `lambda` is decay rate. The steady state follows from the stated differential equation. It does not, by itself, prove PAC bounds, general safety, or a guarantee that an error cannot recur.
+
+## Public Files
+
+- `core/cognitive_immunity/immunity_core.py`: minimal public rule and interface structures.
+- `core/memory/deerflow_schema.py`: minimal structured memory schema.
+
+The interfaces are suitable for inspection, teaching, adaptation, and public experiments. Production orchestration, exact thresholds and weights, private prompts and data, tuning history, customer systems, and deployment automation are not included.
+
+## Research Route
+
+Cognitive Immunity was presented as a non-archival workshop paper at the 2nd SeT-LLM Workshop at KDD 2026. The reported study evaluates recurrence under a documented score-level protocol; it does not certify production safety.
+
+- Technical paper index: https://mianzhang.org/papers/kdd-2026/
+- Research feature: https://mianzhang.org/press/kdd-2026-two-workshop-papers.html
+- Claim boundary: [CLAIM_BOUNDARY.md](CLAIM_BOUNDARY.md)
+
+## Community
+
+- Open research community: https://mianzhang.org/community/
+- GitHub Discussions: https://github.com/mmjbds/mianzhang.org/discussions
 
 ## Citation
-If you utilize our Cognitive Immunity algorithms in your framework, please align with our NeurIPS 2026 paper definitions:
-```bibtex
-@inproceedings{zhang2026sovereign,
-  title={SOVEREIGN: A Cognitive Operating System for Self-Evolving AI Agents},
-  author={Zhang, Mian},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2026}
-}
-```
+
+Use [CITATION.cff](CITATION.cff). Do not cite this repository as a NeurIPS proceedings publication.
+
+## License
+
+The intentionally released source code is available under Apache-2.0. No rights are granted to private or unreleased implementations merely because a public interface refers to them.
