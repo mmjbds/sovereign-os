@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: AI Agent Reliability Lab
+    url: https://mianzhang.org/ai-agent-reliability/
+    about: Compare failure memory with observer effects, repeated failure and action authority.
+  - name: KDD 2026 research feature
+    url: https://mianzhang.org/press/kdd-2026-two-workshop-papers.html
+    about: Read the reported study and its limitations.

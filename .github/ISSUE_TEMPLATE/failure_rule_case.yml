@@ -1,0 +1,42 @@
+name: Bounded failure-rule case
+description: Propose a synthetic or public-safe failure signature and correction-rule lifecycle.
+title: "[Failure rule] "
+body:
+  - type: markdown
+    attributes:
+      value: This repository accepts public interface cases, not production logs or private product requests.
+  - type: textarea
+    id: signature
+    attributes:
+      label: Failure signature
+      description: State a narrow, attributable and public-safe failure pattern.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction rule
+      description: State the bounded behavior change and where it must not apply.
+    validations:
+      required: true
+  - type: textarea
+    id: lifecycle
+    attributes:
+      label: Reinforcement, decay and revocation conditions
+      description: Describe observable conditions without proposing private production thresholds.
+    validations:
+      required: true
+  - type: textarea
+    id: counterexample
+    attributes:
+      label: Counterexample or overreach risk
+      description: Give a case where this rule would suppress a valid action or generalize too far.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Public-safety confirmation
+      options:
+        - label: This case contains no private logs, customer data, credentials, prompts or production policy.
+          required: true

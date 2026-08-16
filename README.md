@@ -21,6 +21,16 @@ Here `B` is retained rule strength, `r` is reinforcement rate, and `lambda` is d
 
 - `core/cognitive_immunity/immunity_core.py`: minimal public rule and interface structures.
 - `core/memory/deerflow_schema.py`: minimal structured memory schema.
+- `examples/rule_lifecycle_demo.py`: deterministic decay-and-reinforcement fixture with a machine-readable receipt.
+
+## Quick Start
+
+```bash
+python examples/rule_lifecycle_demo.py --check
+python -m unittest discover -s tests
+```
+
+The demo uses no model, vector database, provider account or private data. It checks the arithmetic of the released `Antibody` interface; it does not implement production extraction, routing, conflict resolution or deployment policy.
 
 The interfaces are suitable for inspection, teaching, adaptation, and public experiments. Production orchestration, exact thresholds and weights, private prompts and data, tuning history, customer systems, and deployment automation are not included.
 
@@ -30,11 +40,13 @@ Cognitive Immunity was presented as a non-archival workshop paper at the 2nd SeT
 
 - Technical paper index: https://mianzhang.org/papers/kdd-2026/
 - Research feature: https://mianzhang.org/press/kdd-2026-two-workshop-papers.html
+- AI Agent Reliability Lab: https://mianzhang.org/ai-agent-reliability/
 - Claim boundary: [CLAIM_BOUNDARY.md](CLAIM_BOUNDARY.md)
 
 ## Community
 
 - Open research community: https://mianzhang.org/community/
+- Public issue forms: https://github.com/mmjbds/sovereign-os/issues/new/choose
 - GitHub Discussions: https://github.com/mmjbds/mianzhang.org/discussions
 
 ## Citation
