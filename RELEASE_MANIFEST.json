@@ -1,0 +1,17 @@
+{
+  "schema": "public_release_manifest_v1",
+  "version": "0.1.0",
+  "tag": "v0.1.0",
+  "release_date": "2026-08-17",
+  "artifacts": {
+    "core/cognitive_immunity/immunity_core.py": "c137984e07abc94d2c28f795bdc7fab44067a44940777721fe9726881e88836d",
+    "core/memory/deerflow_schema.py": "6787cbe6bb762564a01af72c2241d00c3eb53194b8ea6c78379fcf778217784a",
+    "examples/rule_lifecycle_demo.py": "9ae5dc78ad8baad45edb57b92f5fd4409be5bf795967f55b2c1fd79352ed9f02",
+    "CLAIM_BOUNDARY.md": "f258d05cecec2bd18c2df44ed0ac6f133c4fee0483fa7033c51e010a018e2e94"
+  },
+  "verification": [
+    "python examples/rule_lifecycle_demo.py --check",
+    "python -m unittest discover -s tests"
+  ],
+  "boundary": "Minimal public interfaces only; not the complete product, production orchestration, or safety certification."
+}

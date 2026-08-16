@@ -33,6 +33,8 @@ python -m unittest discover -s tests
 
 The demo uses no model, vector database, provider account or private data. It checks the arithmetic of the released `Antibody` interface; it does not implement production extraction, routing, conflict resolution or deployment policy.
 
+Frozen public version: [`v0.1.0`](https://github.com/mmjbds/sovereign-os/releases/tag/v0.1.0). Verify selected files against [RELEASE_MANIFEST.json](RELEASE_MANIFEST.json); changes are recorded in [CHANGELOG.md](CHANGELOG.md).
+
 The interfaces are suitable for inspection, teaching, adaptation, and public experiments. Production orchestration, exact thresholds and weights, private prompts and data, tuning history, customer systems, and deployment automation are not included.
 
 ## Research Route
