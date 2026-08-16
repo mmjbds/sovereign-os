@@ -1,5 +1,6 @@
 # SOVEREIGN: Public Interfaces for Self-Evolving Agent Systems
 
+[![public-ci](https://github.com/mmjbds/sovereign-os/actions/workflows/public-ci.yml/badge.svg)](https://github.com/mmjbds/sovereign-os/actions/workflows/public-ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 This repository contains minimal public interfaces related to Cognitive Immunity and structured cross-session memory. It is not the complete SOVEREIGN product or a production agent operating system.
@@ -48,6 +49,8 @@ Cognitive Immunity was presented as a non-archival workshop paper at the 2nd SeT
 - Open research community: https://mianzhang.org/community/
 - Public issue forms: https://github.com/mmjbds/sovereign-os/issues/new/choose
 - GitHub Discussions: https://github.com/mmjbds/mianzhang.org/discussions
+- Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Private security route: [SECURITY.md](SECURITY.md)
 
 ## Citation
 
